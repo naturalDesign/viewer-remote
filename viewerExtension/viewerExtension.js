@@ -9,7 +9,7 @@ Autodesk.ADN.Viewing.Extension.DockingPanel = function (viewer, options) {
 
   Autodesk.Viewing.Extension.call(this, viewer, options);
 	
-	var socketServerURL = "https://viewer-remote-miwaniza.c9users.io:8080";
+	var socketServerURL = "https://viewer-remote.herokuapp.com:8080";
 	var socketObj = null; 
 	socketObj =  io(socketServerURL);
 
