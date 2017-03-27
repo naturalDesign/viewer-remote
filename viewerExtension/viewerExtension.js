@@ -1,15 +1,15 @@
 /////////////////////////////////////////////////////////////////////
-// Autodesk.ADN.Viewing.Extension.DockingPanel
+// Autodesk.ADN.Viewing.Extension.ViewerRemote
 // by Dmytro Yemelianov, March 2017
 //
 /////////////////////////////////////////////////////////////////////
 AutodeskNamespace("Autodesk.ADN.Viewing.Extension");
 
-Autodesk.ADN.Viewing.Extension.DockingPanel = function (viewer, options) {
+Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 
   Autodesk.Viewing.Extension.call(this, viewer, options);
 	
-	var socketServerURL = "https://viewer-remote.herokuapp.com:8080";
+	var socketServerURL = "https://viewer-remote.herokuapp.com/";
 	var socketObj = null; 
 	socketObj =  io(socketServerURL);
 
@@ -34,7 +34,7 @@ Autodesk.ADN.Viewing.Extension.DockingPanel = function (viewer, options) {
 
     _panel.setVisible(true);
 
-    console.log('Autodesk.ADN.Viewing.Extension.DockingPanel loaded');
+    console.log('Autodesk.ADN.Viewing.Extension.ViewerRemote loaded');
 
     return true;
   }
@@ -47,7 +47,7 @@ Autodesk.ADN.Viewing.Extension.DockingPanel = function (viewer, options) {
 
     _panel.setVisible(false);
 
-    console.log('Autodesk.ADN.Viewing.Extension.DockingPanel unloaded');
+    console.log('Autodesk.ADN.Viewing.Extension.ViewerRemote unloaded');
 
     return true;
   }
@@ -266,12 +266,12 @@ Autodesk.ADN.Viewing.Extension.DockingPanel = function (viewer, options) {
   $('<style type="text/css">' + css + '</style>').appendTo('head');
 };
 
-Autodesk.ADN.Viewing.Extension.DockingPanel.prototype =
+Autodesk.ADN.Viewing.Extension.ViewerRemote.prototype =
   Object.create(Autodesk.Viewing.Extension.prototype);
 
-Autodesk.ADN.Viewing.Extension.DockingPanel.prototype.constructor =
-  Autodesk.ADN.Viewing.Extension.DockingPanel;
+Autodesk.ADN.Viewing.Extension.ViewerRemote.prototype.constructor =
+  Autodesk.ADN.Viewing.Extension.ViewerRemote;
 
 Autodesk.Viewing.theExtensionManager.registerExtension(
-  'Autodesk.ADN.Viewing.Extension.DockingPanel',
-  Autodesk.ADN.Viewing.Extension.DockingPanel);
+  'Autodesk.ADN.Viewing.Extension.ViewerRemote',
+  Autodesk.ADN.Viewing.Extension.ViewerRemote);
