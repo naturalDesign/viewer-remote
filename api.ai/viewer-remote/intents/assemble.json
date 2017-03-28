@@ -1,0 +1,56 @@
+{
+  "userSays": [
+    {
+      "id": "2f39592c-b328-4a57-aa49-3636b4fec7ab",
+      "data": [
+        {
+          "text": "gather"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7cf977f8-089e-4bc0-8db8-e16731ea4268",
+      "data": [
+        {
+          "text": "collect"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6d1b6365-c1fb-4b04-8950-08b20ee28542",
+      "data": [
+        {
+          "text": "assemble"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "23a6847d-d2cf-48ec-a702-80d300a2aa0e",
+  "name": "assemble",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "viewer.explode(0);"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,6 +1,76 @@
 {
   "userSays": [
     {
+      "id": "63af1579-e70d-4b54-a897-0d6f68d21487",
+      "data": [
+        {
+          "text": "break"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dd64d0b9-3d6d-42e2-ad7c-40584b56bc52",
+      "data": [
+        {
+          "text": "fire in the hole"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ae98d2ee-77a9-4439-bdaa-344bfc0b2469",
+      "data": [
+        {
+          "text": "detonate"
+        }
+      ],
+      "isTemplate": false,
+      "count": 1
+    },
+    {
+      "id": "14abd4fa-31b9-4d2a-932e-4a2f6ace3169",
+      "data": [
+        {
+          "text": "dynamite"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2a95cd66-759f-43a3-8ff0-72a8f54bae60",
+      "data": [
+        {
+          "text": "boom"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "47f38c3b-30fd-428c-8cd9-25b74e113880",
+      "data": [
+        {
+          "text": "eplode 27"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9fd1ae60-3827-4cec-91e5-6f6c5496070b",
+      "data": [
+        {
+          "text": "disassemble"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
       "id": "6ce2d977-4ca1-49ea-a418-ad34386a4b4a",
       "data": [
         {
@@ -88,16 +158,15 @@
           "dataType": "@sys.number",
           "name": "number",
           "value": "$number",
+          "prompts": [],
+          "defaultValue": "100",
           "isList": false
         }
       ],
       "messages": [
         {
           "type": 0,
-          "speech": [
-            "viewer.explode($number/100);",
-            "viewer.explode(1);"
-          ]
+          "speech": "viewer.explode($number/100);"
         }
       ]
     }
