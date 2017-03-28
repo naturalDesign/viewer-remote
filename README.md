@@ -1,4 +1,16 @@
-Remote control for Autodesk Forge Viewer
+# Description
+
+Remote control for Autodesk Forge Viewer. Allows to interact with viewer using Natural Language or Speech interface to perform conversation in chat-like mode.
+
+[TOC]
+
+## Supported platforms
+
+Currently supported interaction from:
+
+- Viewer interface
+- Web interface
+- Telegram messenger
 
 # Supported commands
 
