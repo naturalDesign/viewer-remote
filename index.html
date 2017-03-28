@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>viewer-remote chat</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -26,7 +26,6 @@
     recognition.continuous=true;
     recognition.start();
     
-    
     $('form').submit(function(){
       socket.emit('chat message', $('#m').val());
       $('#m').val('');
@@ -39,7 +38,6 @@
       recognition.onresult = function(event) {
       socket.emit('chat message', event.results[0][0].transcript);
       recognition.stop();
-      //$('#messages').append($('<li>').text(event.results[0][0].transcript));
       };
   });
 </script>

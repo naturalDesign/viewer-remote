@@ -1,0 +1,1 @@
+This folder contains JavaScript code for Autodesk Forge Viewer extension.
