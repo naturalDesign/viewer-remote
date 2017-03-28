@@ -1,0 +1,174 @@
+{
+  "userSays": [
+    {
+      "id": "76059b59-3647-46a0-ae81-58af3c3cf9f8",
+      "data": [
+        {
+          "text": "bye"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "19719cb4-df72-4f79-aa5a-a3ab37806739",
+      "data": [
+        {
+          "text": "how are you?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "42271725-f7b9-43e7-b3ae-9369b17a2ef1",
+      "data": [
+        {
+          "text": "show "
+        },
+        {
+          "text": "time",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b5a2ab45-13b6-464c-b8fd-2da70f6fd654",
+      "data": [
+        {
+          "text": "say "
+        },
+        {
+          "text": "how do you do",
+          "alias": "text",
+          "meta": "@text",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b34183e2-a0d8-4d29-99a3-4a99fa6906cc",
+      "data": [
+        {
+          "text": "say "
+        },
+        {
+          "text": "hello",
+          "alias": "text",
+          "meta": "@text",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "edab8b5b-79e4-409b-a412-811a131b034d",
+      "data": [
+        {
+          "text": "say "
+        },
+        {
+          "text": "test",
+          "alias": "text",
+          "meta": "@text",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c7794249-b97f-4179-a9e8-5289bc59cc6e",
+      "data": [
+        {
+          "text": "show \u0027"
+        },
+        {
+          "text": "Hi",
+          "alias": "text",
+          "meta": "@text",
+          "userDefined": false
+        },
+        {
+          "text": "\u0027 message"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "56203e48-d008-446e-9d8e-91ffc1ce8967",
+      "data": [
+        {
+          "text": "show "
+        },
+        {
+          "text": "test",
+          "alias": "text",
+          "meta": "@text",
+          "userDefined": false
+        },
+        {
+          "text": " message"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2209e114-e043-41b7-a2be-237bfe7c6eaa",
+      "data": [
+        {
+          "text": "message box"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3bc40bfa-f919-4922-969e-ca0dfe4adb5f",
+      "data": [
+        {
+          "text": "show message box"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "8f6e74a5-c60d-407a-8299-479995a3502d",
+  "name": "message",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@text",
+          "name": "text",
+          "value": "$text",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "alert(\u0027$text\u0027);"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

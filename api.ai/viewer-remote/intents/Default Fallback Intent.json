@@ -1,0 +1,39 @@
+{
+  "userSays": [],
+  "id": "6c26eb0f-9912-42fc-8b4e-f93e60227b26",
+  "name": "Default Fallback Intent",
+  "auto": false,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.unknown",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "alert(\u0027I didn\u0027t get that. Can you say it again?\u0027);",
+            "alert(\u0027I missed what you said. Say it again?\u0027);",
+            "alert(\u0027Sorry, could you say that again?\u0027);",
+            "alert(\u0027Sorry, can you say that again?\u0027);",
+            "alert(\u0027Can you say that again?\u0027);",
+            "alert(\u0027Sorry, I didn\u0027t get that.\u0027);",
+            "alert(\u0027Sorry, what was that?\u0027);",
+            "alert(\u0027One more time?\u0027);",
+            "alert(\u0027What was that?\u0027);",
+            "alert(\u0027Say that again?\u0027);",
+            "alert(\u0027I didn\u0027t get that.\u0027);",
+            "alert(\u0027I missed that.\u0027);"
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": []
+}

@@ -1,0 +1,122 @@
+{
+  "userSays": [
+    {
+      "id": "73d9dca0-1216-4583-bb08-465be6aa3544",
+      "data": [
+        {
+          "text": "set focal "
+        },
+        {
+          "text": "length",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "200",
+          "alias": "number",
+          "meta": "@sys.number",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "96dbb4f2-4a72-46ed-b6a3-1f6ecca91d42",
+      "data": [
+        {
+          "text": "focal "
+        },
+        {
+          "text": "length",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "12",
+          "alias": "number",
+          "meta": "@sys.number",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d2fecf24-78cc-413a-ae62-79bcd69a12e1",
+      "data": [
+        {
+          "text": "set focal "
+        },
+        {
+          "text": "300",
+          "alias": "number",
+          "meta": "@sys.number",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "07169343-5037-4239-b3d5-5e4a440d3c19",
+      "data": [
+        {
+          "text": "focal "
+        },
+        {
+          "text": "length",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "150",
+          "alias": "number",
+          "meta": "@sys.number",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "00aa0239-7d18-4471-9954-38154be8968e",
+  "name": "setFocalLength",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "if ( $number \u003c 15) {\n  viewer.setFocalLength(15);\n} else if ( $number \u003e 200) {\n  viewer.setFocalLength(200);\n} else {\n  viewer.setFocalLength($number);\n}"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "543f83e2-8125-434e-896d-e14766b5a17b",
+  "name": "camera1",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "front",
+      "synonyms": [
+        "front"
+      ]
+    },
+    {
+      "value": "back",
+      "synonyms": [
+        "back"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

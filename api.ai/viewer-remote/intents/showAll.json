@@ -1,0 +1,36 @@
+{
+  "userSays": [
+    {
+      "id": "0dcd5f4b-d36f-4462-95c9-bc59d82b1a2a",
+      "data": [
+        {
+          "text": "show all"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "29409bf5-6c8a-4fbb-9112-aa823b5f3d5d",
+  "name": "showAll",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "viewer.showAll();"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

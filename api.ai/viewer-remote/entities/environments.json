@@ -1,0 +1,147 @@
+{
+  "id": "34b0ebd9-46aa-47dc-8da2-afe3d0fcc122",
+  "name": "environments",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "0",
+      "synonyms": [
+        "0",
+        "Simple Grey",
+        "grey",
+        "simple"
+      ]
+    },
+    {
+      "value": "1",
+      "synonyms": [
+        "1",
+        "Sharp Highlights",
+        "sharp"
+      ]
+    },
+    {
+      "value": "2",
+      "synonyms": [
+        "2",
+        "Dark Sky",
+        "sky"
+      ]
+    },
+    {
+      "value": "3",
+      "synonyms": [
+        "3",
+        "Grey Room",
+        "room"
+      ]
+    },
+    {
+      "value": "4",
+      "synonyms": [
+        "4",
+        "Photo Booth",
+        "photo",
+        "booth"
+      ]
+    },
+    {
+      "value": "5",
+      "synonyms": [
+        "5",
+        "Tranquility"
+      ]
+    },
+    {
+      "value": "6",
+      "synonyms": [
+        "6",
+        "Infinity Pool",
+        "pool",
+        "infinity"
+      ]
+    },
+    {
+      "value": "7",
+      "synonyms": [
+        "7",
+        "Simple White",
+        "white"
+      ]
+    },
+    {
+      "value": "8",
+      "synonyms": [
+        "8",
+        "Riverbank",
+        "river",
+        "bank"
+      ]
+    },
+    {
+      "value": "9",
+      "synonyms": [
+        "9",
+        "Contrast"
+      ]
+    },
+    {
+      "value": "10",
+      "synonyms": [
+        "10",
+        "Rim Highlights",
+        "rim"
+      ]
+    },
+    {
+      "value": "11",
+      "synonyms": [
+        "11",
+        "Cool Light",
+        "cool"
+      ]
+    },
+    {
+      "value": "12",
+      "synonyms": [
+        "12",
+        "Warm Light",
+        "warm"
+      ]
+    },
+    {
+      "value": "13",
+      "synonyms": [
+        "13",
+        "Soft Light",
+        "soft"
+      ]
+    },
+    {
+      "value": "14",
+      "synonyms": [
+        "14",
+        "Grid Light",
+        "grid"
+      ]
+    },
+    {
+      "value": "15",
+      "synonyms": [
+        "15",
+        "Plaza"
+      ]
+    },
+    {
+      "value": "16",
+      "synonyms": [
+        "16",
+        "Snow Field",
+        "snow",
+        "field"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

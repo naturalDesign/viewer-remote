@@ -1,0 +1,129 @@
+{
+  "userSays": [
+    {
+      "id": "90a412bb-ba7c-4cfd-8b65-47ba17899edf",
+      "data": [
+        {
+          "text": "set environmet "
+        },
+        {
+          "text": "warm",
+          "alias": "environments",
+          "meta": "@environments",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c792d980-b3f5-4bbe-93c2-4952be2c4ddb",
+      "data": [
+        {
+          "text": "set Light preset "
+        },
+        {
+          "text": "rim",
+          "alias": "environments",
+          "meta": "@environments",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f2e2dc71-dda1-4ce4-9701-90156c494062",
+      "data": [
+        {
+          "text": "set Light preset "
+        },
+        {
+          "text": "Simple Grey",
+          "alias": "environments",
+          "meta": "@environments",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7f25bf9d-28ca-4b73-9074-74ca72124d13",
+      "data": [
+        {
+          "text": "set Light Preset "
+        },
+        {
+          "text": "5",
+          "alias": "environments",
+          "meta": "@environments",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "735a194a-1b35-471c-8b76-483954ed6adf",
+      "data": [
+        {
+          "text": "set environment "
+        },
+        {
+          "text": "1",
+          "alias": "environments",
+          "meta": "@environments",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "619201a5-00ed-4bd3-b7b1-d15f44b1611b",
+      "data": [
+        {
+          "text": "set "
+        },
+        {
+          "text": "Simple Grey",
+          "alias": "environments",
+          "meta": "@environments",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "e69b9fca-57a1-45a9-b67f-ac564c6a9d90",
+  "name": "environment",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@environments",
+          "name": "environments",
+          "value": "$environments",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "viewer.setLightPreset($environments);"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

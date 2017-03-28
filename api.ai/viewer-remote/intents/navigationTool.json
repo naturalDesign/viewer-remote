@@ -1,0 +1,62 @@
+{
+  "userSays": [
+    {
+      "id": "4b109e1b-c2d8-4771-b1ca-7cbf43d82a79",
+      "data": [
+        {
+          "text": "pan",
+          "alias": "navigationTool",
+          "meta": "@navigationTool",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "0c53adf1-a603-445f-bb62-d32f648ab24b",
+      "data": [
+        {
+          "text": "pan",
+          "alias": "navigationTool",
+          "meta": "@navigationTool",
+          "userDefined": false
+        },
+        {
+          "text": " navigation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "e0364216-5a86-4a9c-8c56-1065c9b7799c",
+  "name": "navigationTool",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@navigationTool",
+          "name": "navigationTool",
+          "value": "$navigationTool",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "viewer.setActiveNavigationTool(\"$navigationTool\");"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

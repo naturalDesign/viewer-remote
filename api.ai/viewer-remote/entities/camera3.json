@@ -1,0 +1,21 @@
+{
+  "id": "5038abda-3d71-4943-bc08-ce8d4b59fa4e",
+  "name": "camera3",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "left",
+      "synonyms": [
+        "left"
+      ]
+    },
+    {
+      "value": "right",
+      "synonyms": [
+        "right"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

@@ -1,0 +1,39 @@
+{
+  "id": "d24b0662-8d84-4ac5-b072-45ed8985f6d6",
+  "name": "parameter",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "length",
+      "synonyms": [
+        "length"
+      ]
+    },
+    {
+      "value": "width",
+      "synonyms": [
+        "width"
+      ]
+    },
+    {
+      "value": "depth",
+      "synonyms": [
+        "depth"
+      ]
+    },
+    {
+      "value": "diameter",
+      "synonyms": [
+        "diameter"
+      ]
+    },
+    {
+      "value": "height",
+      "synonyms": [
+        "height"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

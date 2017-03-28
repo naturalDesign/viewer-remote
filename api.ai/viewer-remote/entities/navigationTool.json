@@ -1,0 +1,39 @@
+{
+  "id": "b23b7438-92cb-4cbb-83dc-f1439e2e9c15",
+  "name": "navigationTool",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "orbit",
+      "synonyms": [
+        "orbit"
+      ]
+    },
+    {
+      "value": "pan",
+      "synonyms": [
+        "pan"
+      ]
+    },
+    {
+      "value": "dolly",
+      "synonyms": [
+        "dolly"
+      ]
+    },
+    {
+      "value": "worldup",
+      "synonyms": [
+        "worldup"
+      ]
+    },
+    {
+      "value": "fov",
+      "synonyms": [
+        "fov"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

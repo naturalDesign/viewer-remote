@@ -1,0 +1,46 @@
+{
+  "userSays": [
+    {
+      "id": "6ddf1588-5158-4a7f-89d3-b491b9298f1d",
+      "data": [
+        {
+          "text": "fit"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b21535df-a461-4028-9282-52b8d57590a1",
+      "data": [
+        {
+          "text": "zoom all"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "961f29f6-fa85-4ce1-a343-7468573bf1f8",
+  "name": "zoom",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "viewer.fitToView();"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

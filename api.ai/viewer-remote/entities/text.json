@@ -1,0 +1,33 @@
+{
+  "id": "78e91b3c-c7bf-4a59-9217-9b627cb8e241",
+  "name": "text",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "test",
+      "synonyms": [
+        "test"
+      ]
+    },
+    {
+      "value": "hi",
+      "synonyms": [
+        "hi"
+      ]
+    },
+    {
+      "value": "hello",
+      "synonyms": [
+        "hello"
+      ]
+    },
+    {
+      "value": "how do you do",
+      "synonyms": [
+        "how do you do"
+      ]
+    }
+  ],
+  "isEnum": true,
+  "automatedExpansion": true
+}

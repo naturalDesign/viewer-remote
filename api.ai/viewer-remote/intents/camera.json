@@ -1,0 +1,240 @@
+{
+  "userSays": [
+    {
+      "id": "ff1dfb6d-7da3-417f-a5bd-92f9c38467cd",
+      "data": [
+        {
+          "text": "left",
+          "alias": "camera3",
+          "meta": "@camera3",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "front",
+          "alias": "camera1",
+          "meta": "@camera1",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "bottom",
+          "alias": "camera2",
+          "meta": "@camera2",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a9f82593-66af-4eae-9d2d-c85a09b0f625",
+      "data": [
+        {
+          "text": "top",
+          "alias": "camera2",
+          "meta": "@camera2",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "right",
+          "alias": "camera3",
+          "meta": "@camera3",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "front",
+          "alias": "camera1",
+          "meta": "@camera1",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "55cbd8e9-1024-47e9-90e6-b919badaafa7",
+      "data": [
+        {
+          "text": "left",
+          "alias": "camera3",
+          "meta": "@camera3",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "top",
+          "alias": "camera2",
+          "meta": "@camera2",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "front",
+          "alias": "camera1",
+          "meta": "@camera1",
+          "userDefined": false
+        },
+        {
+          "text": " view"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ab7d12c2-e142-462b-98ee-c2a45e8793f8",
+      "data": [
+        {
+          "text": "bottom",
+          "alias": "camera2",
+          "meta": "@camera2",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "front",
+          "alias": "camera1",
+          "meta": "@camera1",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "right",
+          "alias": "camera3",
+          "meta": "@camera3",
+          "userDefined": false
+        },
+        {
+          "text": " view"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a90f1c23-2c4f-4add-9e17-6db522f928dd",
+      "data": [
+        {
+          "text": "back",
+          "alias": "camera1",
+          "meta": "@camera1",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "left",
+          "alias": "camera3",
+          "meta": "@camera3",
+          "userDefined": false
+        },
+        {
+          "text": " view"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c5919223-a796-4850-8207-1b9ae161e639",
+      "data": [
+        {
+          "text": "set "
+        },
+        {
+          "text": "bottom",
+          "alias": "camera2",
+          "meta": "@camera2",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5687e5a3-ad4b-48f3-852b-b0414d83335a",
+      "data": [
+        {
+          "text": "set "
+        },
+        {
+          "text": "top",
+          "alias": "camera2",
+          "meta": "@camera2",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "b5a4dca6-dc5c-4530-84c5-c359c8d276ae",
+  "name": "camera",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@camera2",
+          "name": "camera2",
+          "value": "$camera2",
+          "isList": false
+        },
+        {
+          "dataType": "@camera1",
+          "name": "camera1",
+          "value": "$camera1",
+          "isList": false
+        },
+        {
+          "dataType": "@camera3",
+          "name": "camera3",
+          "value": "$camera3",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "viewer.setViewCube(\"$camera1\");",
+            "viewer.setViewCube(\"$camera2\");",
+            "viewer.setViewCube(\"$camera3\");",
+            "viewer.setViewCube(\"$camera1, $camera2\");",
+            "viewer.setViewCube(\"$camera1, $camera3\");",
+            "viewer.setViewCube(\"$camera2, $camera3\");",
+            "viewer.setViewCube(\"$camera1, $camera2, $camera3\");"
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

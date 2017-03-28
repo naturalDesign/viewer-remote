@@ -1,0 +1,65 @@
+{
+  "userSays": [
+    {
+      "id": "74307a43-1f65-4c87-9d27-08ca9f89ccff",
+      "data": [
+        {
+          "text": "export "
+        },
+        {
+          "text": "IGES",
+          "alias": "fileFormat",
+          "meta": "@fileFormat",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "40ec17ee-e425-4ab7-9341-4cf10e2bd15b",
+      "data": [
+        {
+          "text": "export "
+        },
+        {
+          "text": "igs",
+          "alias": "fileFormat",
+          "meta": "@fileFormat",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "04582a91-229c-41e1-9c7a-f531452e111b",
+  "name": "export",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@fileFormat",
+          "name": "fileFormat",
+          "value": "$fileFormat",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "var product \u003d app.activeProduct;\nvar design \u003d adsk.fusion.Design(product);\nvar exportMgr \u003d design.exportManager;\n\nvar tmpDir \u003d adsk.tempDirectory();\n\nvar igesOptions \u003d exportMgr.createIGESExportOptions(tmpDir + \u0027test.igs\u0027);\nvar res \u003d exportMgr.execute(igesOptions);\nui.messageBox(\u0027Exported to \u0027+tmpDir + \u0027\\\\test.igs\u0027);"
+        }
+      ]
+    }
+  ],
+  "priority": 250000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

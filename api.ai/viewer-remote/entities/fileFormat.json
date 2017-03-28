@@ -1,0 +1,51 @@
+{
+  "id": "2025d3c8-6c2c-4dbb-a330-4179afd9a391",
+  "name": "fileFormat",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "IGES",
+      "synonyms": [
+        "IGES",
+        "igs"
+      ]
+    },
+    {
+      "value": "STEP",
+      "synonyms": [
+        "STEP",
+        "step"
+      ]
+    },
+    {
+      "value": "SAT",
+      "synonyms": [
+        "SAT",
+        "sat"
+      ]
+    },
+    {
+      "value": "SMT",
+      "synonyms": [
+        "SMT",
+        "smt"
+      ]
+    },
+    {
+      "value": "FusionArchive",
+      "synonyms": [
+        "FusionArchive",
+        "f3d"
+      ]
+    },
+    {
+      "value": "STL",
+      "synonyms": [
+        "STL",
+        "stl"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}
