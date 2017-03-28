@@ -18,11 +18,33 @@ Demo video:
 
 ## Supported platforms
 
-Currently supported interaction from:
+### Current
+
+#### Messengers
 
 - Viewer interface
 - Web interface
 - Telegram messenger
+
+### Planned
+
+#### Messengers
+
+- Slack
+- Facebook Messenger
+- Skype
+- Cortana (Microsoft)
+- Siri (Apple)
+- Amazon Alexa
+
+#### CAD/PDM/PLM
+
+- Autodesk Forge
+- A360
+- Autodesk Fusion
+- Autodesk Revit
+- Solidworks
+- OnShape
 
 # Supported commands
 
