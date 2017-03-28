@@ -2,8 +2,6 @@
 
 Remote control for Autodesk Forge Viewer. Allows to interact with viewer using Natural Language or Speech interface to perform conversation in chat-like mode.
 
-[TOC]
-
 ## Supported platforms
 
 Currently supported interaction from:
@@ -120,7 +118,7 @@ Load Viewer Remote extension.
 
 ![alt tag](https://github.com/naturalDesign/viewer-remote/blob/master/img/how-to1.png)
 
-You can try following commands:
+Try following commands:
 - say hi
 - set top
 - top left front
