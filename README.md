@@ -2,6 +2,14 @@
 
 Remote control for Autodesk Forge Viewer. Allows to interact with viewer using Natural Language or Speech interface to perform conversation in chat-like mode.
 
+## Use cases
+
+- Presentations
+- Hands-free
+- For fun
+- Non-strict interactions
+- Command line interface
+
 ## Supported platforms
 
 Currently supported interaction from:
