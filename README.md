@@ -36,6 +36,9 @@ Demo video:
 - Cortana (Microsoft)
 - Siri (Apple)
 - Amazon Alexa
+- Android
+- iPhone/iPad
+- Windows Phone
 
 #### CAD/PDM/PLM
 
