@@ -8,9 +8,11 @@ Demo video:
 
 ## Use cases
 
+- Virtual reality devices
+- POS terminals
+- Mobile devices with limited UI area
 - Presentations
 - Hands-free
-- For fun
 - Non-strict interactions
 - Command line interface
 
