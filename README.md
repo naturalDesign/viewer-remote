@@ -26,6 +26,10 @@ Demo video:
 - Web interface
 - Telegram messenger
 
+#### CAD/PDM/PLM
+
+- Autodesk Fusion: [fusion-remote](https://github.com/naturalDesign/fusion-remote)
+
 ### Planned
 
 #### Messengers
@@ -42,9 +46,7 @@ Demo video:
 
 #### CAD/PDM/PLM
 
-- Autodesk Forge
 - A360
-- Autodesk Fusion
 - Autodesk Revit
 - Solidworks
 - OnShape
