@@ -2,20 +2,23 @@
 
 Remote control for Autodesk Forge Viewer. Allows to interact with viewer using Natural Language or Speech interface to perform conversation in chat-like mode.
 
+This is a part of [Project Vulpix 🦊](http://ndesign.co/solutions/project-vulpix/).
+
 Demo video:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=MbdTYs8egb4" target="_blank"><img src="http://img.youtube.com/vi/MbdTYs8egb4/0.jpg" alt="viewer-remote for Autodesk Forge Viewer" width="512" height="384" border="10" /></a>
 
 ## Use cases
 
-- People with disabilities
-- Virtual reality devices
-- POS terminals
-- Mobile devices with limited UI area
-- Presentations
-- Hands-free
-- Non-strict interactions
-- Command line interface
+- ♿ People with disabilities
+- 📱 Mobile devices with limited UI area
+- 💬 Hands-free
+- 🗣️ Non-strict interactions
+- 💻 Command line interface
+- 👓 Virtual reality devices
+- 🏧 POS terminals
+- 🎦 Presentations
+- 🌐 Multilingual
 
 ## Supported platforms
 
