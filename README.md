@@ -8,6 +8,7 @@ Demo video:
 
 ## Use cases
 
+- People with disabilities
 - Virtual reality devices
 - POS terminals
 - Mobile devices with limited UI area
