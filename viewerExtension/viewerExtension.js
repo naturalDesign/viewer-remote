@@ -101,36 +101,45 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 		'<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>',
       '<form class="form-inline docking-panel-controls" role="form">',
 
-        '<input id="' + id +'-name" type="text"',
-          'class="docking-panel-name" ',
-          'placeholder=" Query ...">',
-		'<div class="btn-group">',
-
-      '<button type="button" class="btn btn-primary" id="' + id + '-hello-btn">',
-            '<span class="glyphicon glyphicon-comment" aria-hidden="true"> ',
-            '</span> ',
-            'Say Hello',
-          '</button>',
-
-          '<button type="button" class="btn btn-primary" id="' + id + '-listen-btn">',
-            '<span class="glyphicon glyphicon-comment" aria-hidden="true"> ',
-            '</span> ',
-            'Start listening',
-          '</button>',
-
-    '</div>',
 		// Adding history box
 		'<ul class="chat" id="' + id + '-chat">',
 			'<li"><p>History</p></li>',
 		'</ul>',
+
+    '<input id="' + id +'-name" type="text"',
+          'class="docking-panel-name" ',
+          'placeholder=" Query ...";>',
+
+'<div class="btn-group btn-group-justified" role="group">',
+      '<div class="btn-group" role="group">',
+        '<button type="button" class="btn btn-primary" id="' + id + '-submit-btn">',
+              '<span class="glyphicon glyphicon-ok" aria-hidden="true"> ',
+              '</span> ',
+              'Submit',
+        '</button>',
+      '</div>',
+      '<div class="btn-group" role="group">',
+        '<button type="button" class="btn btn-primary" id="' + id + '-listen-btn">',
+          '<span class="glyphicon glyphicon-record" aria-hidden="true"> ',
+          '</span> ',
+          'Start listening',
+        '</button>',
+      '</div>',   
+    '</div>',
 
       '</form>'
     ];
 
     $(_thisPanel.container).append(html.join('\n'));
 
-    $('#' + id + '-hello-btn').click(onButtonClicked);
-	  $('#' + id + '-listen-btn').click(onButtonClicked1);
+    $('#' + id + '-submit-btn').click(onButtonClicked);
+    $('#' + id + '-listen-btn').click(onButtonClicked1);
+    $('#' + id + '-name').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+           onButtonClicked(event);
+        }
+    });
 
     /////////////////////////////////////////////////////////////
     // button clicked handler
@@ -143,10 +152,10 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
       var name = $('#' + id + '-name').val();
 
       if(name.length) {
-        //alert('Hello ' + name + '!');
 		$('#' + id + '-chat').append($('<li>').text(name));
 		socketObj.emit('chat message', name);
       }
+      $('#' + id + '-name').val('');
     }
 	
 	socketObj.on('Forge JS', function(msg){ 
@@ -252,12 +261,13 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
   var css = [
 
     'form.docking-panel-controls{',
-      'margin: 20px;',
+      'margin: 0;',
     '}',
 
     'input.docking-panel-name {',
       'height: 30px;',
-      'margin-left: 5px;',
+      'width: 97%;',
+      //'margin-left: 5px;',
       'margin-bottom: 5px;',
       'margin-top: 5px;',
       'border-radius:5px;',
@@ -279,10 +289,11 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     //Hereinafter is chat-box CSS
 	
 	'.chat {',
-		'margin: 0;',
+		'margin-top: 5px;',
+    'margin-bottom: 5px;',
 		'padding: 0;',
 		'list-style: none;',
-		'max-height: 150px;',
+		'height: 175px;',
 		'overflow-y:scroll; ',
 		'background-color: #FFFFFF',
 	'}',
