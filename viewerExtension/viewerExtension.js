@@ -10,11 +10,12 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 
   Autodesk.Viewing.Extension.call(this, viewer, options);
 	
-	var socketServerURL = "https://viewer-remote.herokuapp.com/";
-	var socketObj = null; 
-	socketObj =  io(socketServerURL);
+	var socketServerURL = "https://viewer-remote.herokuapp.com/"; // Define server URL
+	var socketObj = null;
+	socketObj =  io(socketServerURL); // Declare socket.io object
 
-	var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+// Define speech recognition functionality. Should be replaced by JS framework supported by multiple browsers, not only Chromium-based ones
+	var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)(); 
     recognition.lang = 'en-US';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
@@ -115,7 +116,7 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
           '</span> ',
           'Start listening',
         '</button>',
-		
+		// Adding history box
 		'<ul class="chat" id="' + id + '-chat">',
 			'<li"><p>History</p></li>',
 		'</ul>',
@@ -126,7 +127,7 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     $(_thisPanel.container).append(html.join('\n'));
 
     $('#' + id + '-hello-btn').click(onButtonClicked);
-	$('#' + id + '-listen-btn').click(onButtonClicked1);
+	  $('#' + id + '-listen-btn').click(onButtonClicked1);
 
     /////////////////////////////////////////////////////////////
     // button clicked handler
@@ -149,7 +150,10 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 							$('#' + id + '-chat').append($('<li>').text(msg));
 							eval(msg);
 						});
-	
+	  /////////////////////////////////////////////////////////////
+    // Speech recognition handler
+    //
+    /////////////////////////////////////////////////////////////
 	recognition.onresult = function(event) {
       var resp=event.results[0][0].transcript;
 	  $('#' + id + '-chat').append($('<li>').text(resp));
@@ -268,6 +272,8 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
       'height: 34px;',
       'min-height: 34px',
     '}',
+
+    //Hereinafter is chat-box CSS
 	
 	'.chat {',
 		'margin: 0;',
