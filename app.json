@@ -2,6 +2,6 @@
   "name": "viewer-remote",
   "description": "Chatbot for Autodesk Forge Viewer with speech recognition",
   "repository": "https://github.com/naturalDesign/viewer-remote",
-  "logo": "https://node-js-sample.herokuapp.com/vulpix.png",
-  "keywords": ["node", "express", "static"]
+  "logo": "https://github.com/naturalDesign/viewer-remote/blob/master/vulpix.png",
+  "keywords": ["node", "javascript", "autodesk-forge", "autodesk-viewer", "chatbot", "nlp", "speech-recognition"]
 }
