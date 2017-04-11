@@ -157,6 +157,10 @@ zoom all, fit
 
 # Demo
 
+Feell free to deploy this project on Heroku:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 You can play with it here: http://viewer.autodesk.io/node/gallery/#/viewer
 
 Load Viewer Remote extension.
