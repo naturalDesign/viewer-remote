@@ -1,7 +1,8 @@
 /////////////////////////////////////////////////////////////////////
 // Autodesk.ADN.Viewing.Extension.ViewerRemote
 // by Dmytro Yemelianov, March 2017
-//
+// Project site: http://ndesign.co/
+// Source: http://github.com/naturalDesign/viewer-remote
 /////////////////////////////////////////////////////////////////////
 AutodeskNamespace("Autodesk.ADN.Viewing.Extension");
 
@@ -114,6 +115,10 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
           '</span> ',
           'Start listening',
         '</button>',
+		
+		'<ul class="chat" id="' + id + '-chat">',
+			'<li"><p>History</p></li>',
+		'</ul>',
 
       '</form>'
     ];
@@ -135,16 +140,19 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 
       if(name.length) {
         //alert('Hello ' + name + '!');
+		$('#' + id + '-chat').append($('<li>').text(name));
 		socketObj.emit('chat message', name);
       }
     }
 	
 	socketObj.on('Forge JS', function(msg){ 
+							$('#' + id + '-chat').append($('<li>').text(msg));
 							eval(msg);
 						});
 	
 	recognition.onresult = function(event) {
       var resp=event.results[0][0].transcript;
+	  $('#' + id + '-chat').append($('<li>').text(resp));
 	  socketObj.emit('chat message', resp);
       recognition.stop();
 	  $('#' + id + '-listen-btn').html('Start listening');
@@ -252,15 +260,51 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
       'top: 0px;',
       'left: 0px;',
       'width: 305px;',
-      'height: 150px;',
+      'height: 300px;',
       'resize: none;',
     '}',
 
     'div.docking-panel-minimized {',
       'height: 34px;',
       'min-height: 34px',
-    '}'
-
+    '}',
+	
+	'.chat {',
+		'margin: 0;',
+		'padding: 0;',
+		'list-style: none;',
+		'max-height: 100px;',
+		'overflow-y:scroll; ',
+		'background-color: #FFFFFF',
+	'}',
+	
+	'.chat li {',
+    'margin-bottom: 10px;',
+    'padding-bottom: 5px;',
+    'border-bottom: 1px dotted #B3A9A9;',
+	'}',
+	
+	'.chat li .chat-body p {',
+	'	margin: 0;',
+	'	color: #777777;',
+	'}',
+	
+	'::-webkit-scrollbar-track',
+	'{',
+	'	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);',
+	'	background-color: #F5F5F5;',
+	'}',
+	'::-webkit-scrollbar',
+	'{',
+	'	width: 12px;',
+	'	background-color: #F5F5F5;',
+	'}',
+	'::-webkit-scrollbar-thumb',
+	'{',
+	'	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);',
+	'	background-color: #555;',
+	'}'
+	
   ].join('\n');
 
   $('<style type="text/css">' + css + '</style>').appendTo('head');
