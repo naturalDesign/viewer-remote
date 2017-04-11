@@ -104,18 +104,21 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
         '<input id="' + id +'-name" type="text"',
           'class="docking-panel-name" ',
           'placeholder=" Query ...">',
-		
-		'<button class="btn btn-info" id="' + id + '-hello-btn">',
-          '<span class="glyphicon glyphicon-comment" aria-hidden="true"> ',
-          '</span> ',
-          'Say Hello',
-        '</button>',
+		'<div class="btn-group">',
 
-        '<button class="btn btn-info" id="' + id + '-listen-btn">',
-          '<span class="glyphicon glyphicon-comment" aria-hidden="true"> ',
-          '</span> ',
-          'Start listening',
-        '</button>',
+      '<button type="button" class="btn btn-primary" id="' + id + '-hello-btn">',
+            '<span class="glyphicon glyphicon-comment" aria-hidden="true"> ',
+            '</span> ',
+            'Say Hello',
+          '</button>',
+
+          '<button type="button" class="btn btn-primary" id="' + id + '-listen-btn">',
+            '<span class="glyphicon glyphicon-comment" aria-hidden="true"> ',
+            '</span> ',
+            'Start listening',
+          '</button>',
+
+    '</div>',
 		// Adding history box
 		'<ul class="chat" id="' + id + '-chat">',
 			'<li"><p>History</p></li>',
