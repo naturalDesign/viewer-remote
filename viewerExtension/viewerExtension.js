@@ -281,7 +281,7 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
       'top: 0px;',
       'left: 0px;',
       'width: 305px;',
-      'height: 300px;',
+      'height: 330px;',
       'resize: none;',
     '}',
 
