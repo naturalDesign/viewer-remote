@@ -124,13 +124,13 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
               'Submit',
         '</button>',
       '</div>',
-      '<div class="btn-group">',
-        '<button type="button" class="btn btn-primary" id="' + id + '-listen-btn">',
-          '<span class="glyphicon glyphicon-record" aria-hidden="true"> ',
-          '</span> ',
-          'Start listening',
-        '</button>',
-      '</div>',   
+      // '<div class="btn-group">',
+      //   '<button type="button" class="btn btn-primary" id="' + id + '-listen-btn">',
+      //     '<span class="glyphicon glyphicon-record" aria-hidden="true"> ',
+      //     '</span> ',
+      //     'Start listening',
+      //   '</button>',
+      // '</div>',   
     '</div>',
 
       '</form>'
@@ -139,7 +139,7 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     $(_thisPanel.container).append(html.join('\n'));
 
     $('#' + id + '-submit-btn').click(onButtonClicked);
-    $('#' + id + '-listen-btn').click(onButtonClicked1);
+    //$('#' + id + '-listen-btn').click(onButtonClicked1);
     $('#' + id + '-name').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
@@ -204,16 +204,16 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 
 	
 	
-	function onButtonClicked1(event) {
+	// function onButtonClicked1(event) {
 
-      event.preventDefault();
+  //     event.preventDefault();
 
-      var name = $('#' + id + '-name').val();
-	  event.preventDefault();
-		$('#' + id + '-listen-btn').html('Stop listening');
-		recognition.start();
+  //     var name = $('#' + id + '-name').val();
+	//   event.preventDefault();
+	// 	$('#' + id + '-listen-btn').html('Stop listening');
+	// 	recognition.start();
 	  
-    }
+  //   }
 
     /////////////////////////////////////////////////////////////
     // setVisible override (not used in that sample)
