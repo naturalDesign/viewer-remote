@@ -16,8 +16,16 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/img/*', function (req, res) {
-  res.sendFile(__dirname + '/img/*');
+app.get('/img/vulpix.png', function (req, res) {
+  res.sendFile(__dirname + '/img/vulpix.png');
+});
+
+app.get('/img/vulpix_32.png', function (req, res) {
+  res.sendFile(__dirname + '/img/vulpix_32.png');
+});
+
+app.get('/img/vulpix_16.png', function (req, res) {
+  res.sendFile(__dirname + '/img/vulpix_16.png');
 });
 
 // Webhook for api.ai
