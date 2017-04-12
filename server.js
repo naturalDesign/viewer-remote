@@ -16,6 +16,10 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/img/*', function (req, res) {
+  res.sendFile(__dirname + '/img/*');
+});
+
 // Webhook for api.ai
 app.post('/hook', function (req, res) {
   io.emit('Forge JS', req.body.result.fulfillment.messages[0].speech);
