@@ -99,6 +99,8 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     /////////////////////////////////////////////////////////////
     var html = [
 		'<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>',
+    '<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>',
+    '<script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>',
       '<form class="form-inline docking-panel-controls" role="form">',
     
     '<a href="https://github.com/naturalDesign/viewer-remote">',
@@ -144,6 +146,22 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
            onButtonClicked(event);
         }
     });
+
+    if (annyang) {
+  // Add our commands to annyang
+  annyang.addCommands({
+    'hello': function() { alert('Hello world!'); }
+  });
+
+  // Tell KITT to use annyang
+  SpeechKITT.annyang();
+
+  // Define a stylesheet for KITT to use
+  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+  // Render KITT's interface
+  SpeechKITT.vroom();
+  }
 
     /////////////////////////////////////////////////////////////
     // button clicked handler
