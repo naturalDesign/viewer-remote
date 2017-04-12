@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/vulpix*.png', function (req, res) {
-  res.sendFile(__dirname + '/vulpix*.png');
+  res.send(__dirname + '/vulpix*.png');
 });
 
 // Webhook for api.ai
