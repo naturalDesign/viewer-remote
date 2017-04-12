@@ -88,7 +88,7 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
       this,
       parentContainer,
       id,
-      'Viewer Remote Demo',
+      'Viewer-Remote',
       {shadow:true});
 
     $(_thisPanel.container).addClass('docking-panel');
@@ -100,6 +100,10 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     var html = [
 		'<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>',
       '<form class="form-inline docking-panel-controls" role="form">',
+    
+    '<a href="https://github.com/naturalDesign/viewer-remote">',
+      '<img src="https://viewer-remote.herokuapp.com/img/vulpix_32.png" alt="Priject Vulpix" width="32" height="32">',
+    '</a>',
 
 		// Adding history box
 		'<ul class="chat" id="' + id + '-chat">',
