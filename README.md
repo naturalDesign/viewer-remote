@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() [![Github Releases](https://img.shields.io/github/downloads/atom/atom/latest/total.svg)]()
 # Description
 
 Remote control for [Autodesk Forge Viewer](https://forge.autodesk.com/). Allows to interact with viewer using Natural Language or Speech interface to perform conversation in chat-like mode.
