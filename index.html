@@ -15,16 +15,35 @@
   </head>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+    
 <script>
   $(function () {
     var socket = io();
     
-    var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
-    recognition.lang = 'en-US';
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-    recognition.continuous=true;
-    recognition.start();
+    // var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+    // recognition.lang = 'en-US';
+    // recognition.interimResults = false;
+    // recognition.maxAlternatives = 1;
+    // recognition.continuous=true;
+    // recognition.start();
+
+    if (annyang) {
+      // Add our commands to annyang
+      annyang.addCommands({
+        'hello': function() { alert('Hello world!'); }
+      });
+
+      // Tell KITT to use annyang
+      SpeechKITT.annyang();
+
+      // Define a stylesheet for KITT to use
+      SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+      // Render KITT's interface
+      SpeechKITT.vroom();
+    }
     
     $('form').submit(function(){
       socket.emit('chat message', $('#m').val());
@@ -35,12 +54,13 @@
       $('#messages').append($('<li>').text(msg));
     });
     
-      recognition.onresult = function(event) {
-      socket.emit('chat message', event.results[0][0].transcript);
-      recognition.stop();
-      };
+    // recognition.onresult = function(event) {
+    // socket.emit('chat message', event.results[0][0].transcript);
+    // recognition.stop();
+    // };
+    
   });
-</script>
+  </script>
   <body>
     <ul id="messages"></ul>
     <form action="">
