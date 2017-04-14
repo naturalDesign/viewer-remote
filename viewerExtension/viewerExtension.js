@@ -14,14 +14,32 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 	var socketObj = null;
 	socketObj =  io(socketServerURL); // Declare socket.io object
 
-// Define speech recognition functionality. Should be replaced by JS framework supported by multiple browsers, not only Chromium-based ones
-	var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)(); 
-    recognition.lang = 'en-US';
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-    recognition.continuous=true;	
-	var recognizing = false;
+  require.config({
+    paths: {
+        'annyang': 'https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min',
+        'speechkitt': 'https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min'
+    },
+    waitSeconds: 15
+});
 
+  require(['annyang', 'speechkitt'], function (annyang, speechkitt){
+  // Add our commands to annyang
+  annyang.addCommands({
+    'hello': function() { alert('Hello world!'); }
+  });
+
+  // Tell KITT to use annyang
+  SpeechKITT.annyang();
+
+
+  // Define a stylesheet for KITT to use
+  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+  // Render KITT's interface
+  SpeechKITT.vroom();
+
+  });
+  
   var _panel = null;
 
   /////////////////////////////////////////////////////////////////
@@ -99,8 +117,6 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     /////////////////////////////////////////////////////////////
     var html = [
 		'<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>',
-    '<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>',
-    '<script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>',
     '<form class="form-inline docking-panel-controls" role="form">',
     
     '<a href="https://github.com/naturalDesign/viewer-remote">',
@@ -116,22 +132,12 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
           'class="docking-panel-name" ',
           'placeholder=" Query ...";>',
 
-'<div class="btn-group btn-group-justified">',
-      '<div class="btn-group">',
         '<button type="button" class="btn btn-primary" id="' + id + '-submit-btn">',
               '<span class="glyphicon glyphicon-ok" aria-hidden="true"> ',
               '</span> ',
               'Submit',
         '</button>',
-      '</div>',
-      // '<div class="btn-group">',
-      //   '<button type="button" class="btn btn-primary" id="' + id + '-listen-btn">',
-      //     '<span class="glyphicon glyphicon-record" aria-hidden="true"> ',
-      //     '</span> ',
-      //     'Start listening',
-      //   '</button>',
-      // '</div>',   
-    '</div>',
+
 
       '</form>'
     ];
@@ -146,22 +152,6 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
            onButtonClicked(event);
         }
     });
-
-    if (annyang) {
-  // Add our commands to annyang
-  annyang.addCommands({
-    'hello': function() { alert('Hello world!'); }
-  });
-
-  // Tell KITT to use annyang
-  SpeechKITT.annyang();
-
-  // Define a stylesheet for KITT to use
-  SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
-
-  // Render KITT's interface
-  SpeechKITT.vroom();
-  }
 
     /////////////////////////////////////////////////////////////
     // button clicked handler
@@ -184,36 +174,6 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 							$('#' + id + '-chat').append($('<li>').text(msg));
 							eval(msg);
 						});
-	  /////////////////////////////////////////////////////////////
-    // Speech recognition handler
-    //
-    /////////////////////////////////////////////////////////////
-	// recognition.onresult = function(event) {
-  //     var resp=event.results[0][0].transcript;
-	//   $('#' + id + '-chat').append($('<li>').text(resp));
-	//   socketObj.emit('chat message', resp);
-  //     recognition.stop();
-	//   $('#' + id + '-listen-btn').html('Start listening');
-	//   $('#' + id + '-name').val(resp);
-  //     };
-	
-	// recognition.onstart = function() {
-  //               recognizing = true;
-	// 			$('#' + id + '-listen-btn').html('Stop listening');
-  //           };
-
-	
-	
-	// function onButtonClicked1(event) {
-
-  //     event.preventDefault();
-
-  //     var name = $('#' + id + '-name').val();
-	//   event.preventDefault();
-	// 	$('#' + id + '-listen-btn').html('Stop listening');
-	// 	recognition.start();
-	  
-  //   }
 
     /////////////////////////////////////////////////////////////
     // setVisible override (not used in that sample)
