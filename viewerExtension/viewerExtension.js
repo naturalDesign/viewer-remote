@@ -101,7 +101,7 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 		'<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>',
     '<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>',
     '<script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>',
-      '<form class="form-inline docking-panel-controls" role="form">',
+    '<form class="form-inline docking-panel-controls" role="form">',
     
     '<a href="https://github.com/naturalDesign/viewer-remote">',
       '<img src="https://viewer-remote.herokuapp.com/img/vulpix_32.png" alt="Priject Vulpix" width="32" height="32">',
@@ -188,19 +188,19 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     // Speech recognition handler
     //
     /////////////////////////////////////////////////////////////
-	recognition.onresult = function(event) {
-      var resp=event.results[0][0].transcript;
-	  $('#' + id + '-chat').append($('<li>').text(resp));
-	  socketObj.emit('chat message', resp);
-      recognition.stop();
-	  $('#' + id + '-listen-btn').html('Start listening');
-	  $('#' + id + '-name').val(resp);
-      };
+	// recognition.onresult = function(event) {
+  //     var resp=event.results[0][0].transcript;
+	//   $('#' + id + '-chat').append($('<li>').text(resp));
+	//   socketObj.emit('chat message', resp);
+  //     recognition.stop();
+	//   $('#' + id + '-listen-btn').html('Start listening');
+	//   $('#' + id + '-name').val(resp);
+  //     };
 	
-	recognition.onstart = function() {
-                recognizing = true;
-				$('#' + id + '-listen-btn').html('Stop listening');
-            };
+	// recognition.onstart = function() {
+  //               recognizing = true;
+	// 			$('#' + id + '-listen-btn').html('Stop listening');
+  //           };
 
 	
 	
