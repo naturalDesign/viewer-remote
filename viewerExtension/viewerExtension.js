@@ -13,6 +13,7 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 	var socketServerURL = "https://viewer-remote.herokuapp.com/"; // Define server URL
 	var socketObj = null;
 	socketObj =  io(socketServerURL); // Declare socket.io object
+  var activeLanguage = 'en';
 
   require.config({
     paths: {
@@ -22,24 +23,62 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     waitSeconds: 15
 });
 
+$('#LanguageSelection').change(function () {
+    var selectedVal = $(this).find("option:selected").val();
+    activeLanguage= selectedVal;
+});
+
   require(['annyang', 'speechkitt'], function (annyang, speechkitt){
   // Add our commands to annyang
-  annyang.addCommands({
-    'hello': function() { alert('Hello world!'); }
-  });
-
+  annyang.setLanguage(activeLanguage);
+  switch(activeLanguage){
+    case 'en' : annyang.addCommands({
+      'boom': explodeView,
+      'explode :amount': explodeViewVal,
+      'assemble':assemble,
+      'zoom all':fitView
+    });
+    break;
+    case 'ru': annyang.addCommands({
+      'взорвать': explodeView,
+      'взорвать :amount': explodeViewVal,
+      'собрать':assemble,
+      'показать все':fitView
+    });
+    break;
+    case 'ge': annyang.addCommands({
+      'boom': explodeView,
+      'explodieren :amount': explodeViewVal,
+      'montieren':assemble,
+      'Zoomen':fitView
+    });
+    break;
+  };
   // Tell KITT to use annyang
   SpeechKITT.annyang();
-
-
   // Define a stylesheet for KITT to use
   SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
-
+  SpeechKITT.setInstructionsText('Some commands to try…');
+  SpeechKITT.setSampleCommands(['explode', 'zoom all', 'assemble']);
   // Render KITT's interface
   SpeechKITT.vroom();
-
   });
   
+var explodeView = function(){
+    viewer.explode(1);
+};
+var explodeViewVal = function(amount){
+    viewer.explode(amount/100);
+};
+var assemble = function(){
+    viewer.explode(0);
+};
+var fitView = function(){
+    viewer.fitToView();
+};
+
+
+
   var _panel = null;
 
   /////////////////////////////////////////////////////////////////
@@ -118,6 +157,12 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
     var html = [
 		'<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>',
     '<form class="form-inline docking-panel-controls" role="form">',
+
+    '<select class="form-control" id="LanguageSelection" name="LanguageSelection">',
+    '<option selected="selected" value="en">English</option>',
+    '<option value="ge">German</option>',
+    '<option value="ru">Russian</option>',
+    '</select>',
     
     '<a href="https://github.com/naturalDesign/viewer-remote">',
       '<img src="https://viewer-remote.herokuapp.com/img/vulpix_32.png" alt="Priject Vulpix" width="32" height="32">',
