@@ -13,13 +13,14 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
   var socketObj = null;
   socketObj = io(socketServerURL); // Declare socket.io object
   var activeLanguage = 'en-US';
+  var synth = window.speechSynthesis;
   var msg = new SpeechSynthesisUtterance();
   var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[10]; // Note: some voices don't support altering params
+  // msg.voice = voices[2]; // Note: some voices don't support altering params
   msg.voiceURI = 'native';
   msg.volume = 1; // 0 to 1
   msg.rate = 1; // 0.1 to 10
-  msg.pitch = 2; //0 to 2
+  msg.pitch = 1; //0 to 2
   msg.onend = function(e) {
   console.log('Finished in ' + event.elapsedTime + ' seconds.');
 };
@@ -51,25 +52,25 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
           annyang.addCommands({'boom': explodeView, 'explode :amount': explodeViewVal, 'assemble': assemble, 'zoom all': fitView});
           SpeechKITT.setInstructionsText('Some commands to try…');
           SpeechKITT.setSampleCommands(['explode', 'zoom all', 'assemble']);
-          alert('Language is set to English');
           msg.text='Language is set to English';
-          window.speechSynthesis.speak(msg);
+          synth.speak(msg);
+          // alert('Language is set to English');
           break;
         case 'ru':
           annyang.addCommands({'взорвать': explodeView, 'взорвать :amount': explodeViewVal, 'собрать': assemble, 'показать все': fitView});
           SpeechKITT.setInstructionsText('Попробуйте произнести команды…');
           SpeechKITT.setSampleCommands(['взорвать', 'показать все', 'собрать']);
-          alert('Язык изменен на русский');
           msg.text='Язык изменен на русский';
-          window.speechSynthesis.speak(msg);
+          synth.speak(msg);
+          // alert('Язык изменен на русский');
           break;
         case 'ge-DE':
           annyang.addCommands({'boom': explodeView, 'explodieren :amount': explodeViewVal, 'montieren': assemble, 'Zoomen': fitView});
           SpeechKITT.setInstructionsText('Einige Befehle zu versuchen…');
           SpeechKITT.setSampleCommands(['boom', 'explodieren', 'montieren', 'Zoomen']);
-          alert('Sprache ist auf Deutsch geändert');
           msg.text='Sprache ist auf Deutsch geändert';
-          window.speechSynthesis.speak(msg);
+          synth.speak(msg);
+          // alert('Sprache ist auf Deutsch geändert');          
           break;
       };
     };
@@ -83,15 +84,67 @@ Autodesk.ADN.Viewing.Extension.ViewerRemote = function (viewer, options) {
 
   var explodeView = function () {
     viewer.explode(1);
+    msg.lang=activeLanguage;
+    switch (activeLanguage) {
+      case 'en-US':
+        msg.text='Exploding the model';
+        break;
+      case 'ru':
+        msg.text='Разбираем модель';
+        break;
+      case 'ge-DE':
+        msg.text='Exploding the model';
+        break;
+    };
+    synth.speak(msg);
   };
   var explodeViewVal = function (amount) {
     viewer.explode(amount / 100);
+        msg.lang=activeLanguage;
+    switch (activeLanguage) {
+      case 'en-US':
+        msg.text='Exploding the model';
+        break;
+      case 'ru':
+        msg.text='Разбираем модель';
+        break;
+      case 'ge-DE':
+        msg.text='Exploding the model';
+        break;
+    };
+    synth.speak(msg);
   };
   var assemble = function () {
     viewer.explode(0);
+    msg.lang=activeLanguage;
+    switch (activeLanguage) {
+      case 'en-US':
+        msg.text='Assembling the model';
+        break;
+      case 'ru':
+        msg.text='Собираем модель';
+        break;
+      case 'ge-DE':
+        msg.text='Montieren the model';
+        break;
+    };
+    synth.speak(msg);
   };
   var fitView = function () {
     viewer.fitToView();
+    msg.lang=activeLanguage;
+    switch (activeLanguage) {
+      case 'en-US':
+        msg.text='Showing the model';
+        break;
+      case 'ru':
+        msg.text='Показываем всю модель';
+        break;
+      case 'ge-DE':
+        msg.text='Zoomen alles';
+        break;
+    };
+    synth.speak(msg);
   };
 
   var _panel = null;
