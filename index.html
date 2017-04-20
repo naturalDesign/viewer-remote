@@ -51,13 +51,13 @@
     // socket.on('chat message', function(msg){
     //   $('#messages').append($('<li>').text(msg));
     // });
-    $('btn-top').click(function(){
+    $('#btn-top').click(function(){
       socket.emit('chat message', 'set top');
     });
-    $('btn-left').click(function(){
+    $('#btn-left').click(function(){
       socket.emit('chat message', 'set left');
     });
-    $('btn-right').click(function(){
+    $('#btn-right').click(function(){
       socket.emit('chat message', 'set right');
     });
     
