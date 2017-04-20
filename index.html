@@ -62,9 +62,9 @@
     $('#btn-right').click(function(){
       socket.emit('chat message', 'set right');
     });
-    $("#ex1").slider();
-    $("#ex1").on("slide", function(slideEvt) {
-	    socket.emit('chat message', 'explode '+slideEvt.value);
+    $("#ex1").on("input change", function() {
+      console.log('explode '+$("#ex1").val());
+	    socket.emit('chat message', 'explode '+$("#ex1").val());
     });    
     
     // recognition.onresult = function(event) {
@@ -85,7 +85,7 @@
     <button type="button" id='btn-left' class="btn btn-primary">Left</button>
     <button type="button" id='btn-right' class="btn btn-primary">Right</button>
   </div>-->
-  <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.1" data-slider-value="0"/>  
+  <input id="ex1" type="range" min='0' max='1' step="0.1"/>  
 </div>
   </body>
 </html>
