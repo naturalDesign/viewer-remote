@@ -62,6 +62,9 @@
     $('#btn-right').click(function(){
       socket.emit('chat message', 'set right');
     });
+    $('#btn-fit').click(function(){
+      socket.emit('chat message', 'fit');
+    });
     $("#ex1").on("input change", function() {
       console.log('explode '+$("#ex1").val());
 	    socket.emit('chat message', 'explode '+$("#ex1").val());
@@ -84,6 +87,7 @@
     <button type="button" id='btn-top' class="btn btn-primary">Top</button>
     <button type="button" id='btn-left' class="btn btn-primary">Left</button>
     <button type="button" id='btn-right' class="btn btn-primary">Right</button>
+    <button type="button" id='btn-fit' class="btn btn-primary">Fit</button>
   </div>
   <input id="ex1" type="range" min='0' max='100' step="10"/>  
 </div>
