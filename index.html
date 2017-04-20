@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.min.js"></script>
     
 <script>
   $(function () {
@@ -60,6 +61,10 @@
     $('#btn-right').click(function(){
       socket.emit('chat message', 'set right');
     });
+    $('#ex1').slider(function(value){
+      socket.emit('chat message', 'explode '+value);
+    });
+    
     
     // recognition.onresult = function(event) {
     // socket.emit('chat message', event.results[0][0].transcript);
@@ -79,6 +84,7 @@
     <button type="button" id='btn-left' class="btn btn-primary">Left</button>
     <button type="button" id='btn-right' class="btn btn-primary">Right</button>
   </div>
+  <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.1" data-slider-value="0"/>
 </div>
   </body>
 </html>
