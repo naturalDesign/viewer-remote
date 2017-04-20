@@ -17,42 +17,48 @@
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 <script>
   $(function () {
     var socket = io();
+
+    // if (annyang) {
+    //   // Add our commands to annyang
+    //   annyang.addCommands({
+    //     'hello': function() { alert('Hello world!'); }
+    //   });
+
+    //   // Tell KITT to use annyang
+    //   SpeechKITT.annyang();
+
+    //   // Define a stylesheet for KITT to use
+    //   SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+    //   // Render KITT's interface
+    //   SpeechKITT.vroom();
+    // }
     
-    
-    // var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
-    // recognition.lang = 'en-US';
-    // recognition.interimResults = false;
-    // recognition.maxAlternatives = 1;
-    // recognition.continuous=true;
-    // recognition.start();
-
-    if (annyang) {
-      // Add our commands to annyang
-      annyang.addCommands({
-        'hello': function() { alert('Hello world!'); }
-      });
-
-      // Tell KITT to use annyang
-      SpeechKITT.annyang();
-
-      // Define a stylesheet for KITT to use
-      SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
-
-      // Render KITT's interface
-      SpeechKITT.vroom();
-    }
-    
-    $('form').submit(function(){
-      socket.emit('chat message', $('#m').val());
-      $('#m').val('');
-      return false;
+    // $('form').submit(function(){
+    //   socket.emit('chat message', $('#m').val());
+    //   $('#m').val('');
+    //   return false;
+    // });
+    // socket.on('chat message', function(msg){
+    //   $('#messages').append($('<li>').text(msg));
+    // });
+    $('btn-top').click(function(){
+      socket.emit('chat message', 'set top');
     });
-    socket.on('chat message', function(msg){
-      $('#messages').append($('<li>').text(msg));
+    $('btn-left').click(function(){
+      socket.emit('chat message', 'set left');
+    });
+    $('btn-right').click(function(){
+      socket.emit('chat message', 'set right');
     });
     
     // recognition.onresult = function(event) {
@@ -63,9 +69,16 @@
   });
   </script>
   <body>
-    <ul id="messages"></ul>
+    <!--<ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    </form>-->
+    <div class="container">
+  <div class="btn-group">
+    <button type="button" id='btn-top' class="btn btn-primary">Top</button>
+    <button type="button" id='btn-left' class="btn btn-primary">Left</button>
+    <button type="button" id='btn-right' class="btn btn-primary">Right</button>
+  </div>
+</div>
   </body>
 </html>
