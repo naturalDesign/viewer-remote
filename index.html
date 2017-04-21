@@ -21,9 +21,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.min.js"></script>-->
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     
 <script>
   $(function () {
@@ -89,6 +91,10 @@
     <button type="button" id='btn-right' class="btn btn-primary">Right</button>
     <button type="button" id='btn-fit' class="btn btn-primary">Fit</button>
   </div>
+  <input type="checkbox" id='cb-top' checked data-toggle="toggle" data-on="Top" data-off="Bottom">
+  <input type="checkbox" id='cb-left' checked data-toggle="toggle" data-on="Left" data-off="Right">
+  <input type="checkbox" id='cb-front' checked data-toggle="toggle" data-on="Front" data-off="Back">
+  
   <div class="range-slider">
     <input id="ex1" class="input-range" orient="vertical" type="range" min='0' max='100' step="10"/>  
 </div>
